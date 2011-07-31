@@ -29,6 +29,10 @@ def import_file(filename, parent):
             _nick[name] = nick.Nick(name, date, time)
             _log = log.Log(' '.join(data), date, time, _nick[name], _channel)
 
+if len(sys.argv) < 2:
+    print "Usage: %s /locate/to/tiarra/log" % (sys.argv[0])
+    quit()
+
 for (root, dirs, files) in os.walk(sys.argv[1]):
     for _file in files:
         print root, _file 
