@@ -1,6 +1,6 @@
 # tiarra dbi log importer 
 
-This script import [tiarra(IRC Proxy)](http://www.clovery.jp/tiarra/) logs to DB [(DBI:Log)](http://d.hatena.ne.jp/woremacx/20080404/1207260356).
+This script import [tiarra(IRC Proxy)](http://www.clovery.jp/tiarra/) logs to DB [(Log::DBI)](http://d.hatena.ne.jp/woremacx/20080404/1207260356).
 
 ## Requirement
 - Python (I tested version 2.7.1)
@@ -11,7 +11,7 @@ This script import [tiarra(IRC Proxy)](http://www.clovery.jp/tiarra/) logs to DB
 
 Firstly, you need to finish these settings.
 - tiarra
-- DBI::Log
+- Log::DBI
 
 Download tar.gz or git clone this repository.
 
