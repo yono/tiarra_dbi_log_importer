@@ -14,18 +14,18 @@ def import_file(filename, parent):
 
     date = os.path.basename(filename).replace('.txt', '')
 
-    regex_hatugen = re.compile(r'^[(|)|<|>|].*:(?P<name>\w+)[(|)|<|>|]$')
+    re_sentence = re.compile(r'^[(|)|<|>|].*:(?P<name>\w+)[(|)|<|>|]$')
 
     _channel = None
 
     for line in infile:
         data = line.split(' ')
         time = data.pop(0)
+        line = data.pop(0)
         if (_channel is None):
             _channel = channel.Channel(os.path.basename(parent), date, time)
-        datatype = data.pop(0)
-        if regex_hatugen.search(datatype):
-            name = regex_hatugen.search(datatype).group('name')
+        if re_sentence.search(line):
+            name = re_sentence.search(line).group('name')
             _nick[name] = nick.Nick(name, date, time)
             _log = log.Log(' '.join(data), date, time, _nick[name], _channel)
 

@@ -32,3 +32,4 @@ class Channel(model.Model):
             return row[0]
         else:
             return None
+
